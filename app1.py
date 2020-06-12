@@ -17,4 +17,9 @@ def translate(word):
     else:
         return "Incorrect word.Please double check it"
 word=input("\ninput enter the word\n")
-print(translate(word))
+output=(translate(word))
+if type(output)== list :
+    for item in output:
+        print (item)
+else:
+    print (output)

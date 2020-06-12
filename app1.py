@@ -7,7 +7,13 @@ def translate(word):
     if myword in data:
         return data[myword]
     elif len(get_close_matches(myword,data.keys())) > 0 :
-        return "Did you mean %s?" % get_close_matches(myword,data.keys())[0]
+        yn=input("Did you mean %s ? Enter Y if yes and N if no :" % get_close_matches(myword,data.keys())[0])
+        if yn=="Y":
+            return data[get_close_matches(myword,data.keys())[0]]
+        elif yn=="N":
+            return "word doesnot exist"
+        else:
+            return "We didnot understood what you want to say"
     else:
         return "Incorrect word.Please double check it"
 word=input("\ninput enter the word\n")
